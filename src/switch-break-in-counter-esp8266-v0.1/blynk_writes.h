@@ -2,7 +2,7 @@ BLYNK_WRITE(vPIN_BREAKER_01_TARGET)
 {
   int targetValue = param.asInt();
   if (targetValue!= SwBreaker_01_Target){
-    SwBreaker_01_Target = targetValue*1000;
+    SwBreaker_01_Target = targetValue;
     EEPROM.write(ADR_BREAKER_01_TARGET, SwBreaker_01_Target);
     EEPROM.commit();
   }
@@ -11,9 +11,9 @@ BLYNK_WRITE(vPIN_BREAKER_01_TARGET)
 
 BLYNK_WRITE(vPIN_BREAKER_02_TARGET)
 {
-  int targetValue = param.asInt()*1000;
+  int targetValue = param.asInt();
   if (targetValue!= SwBreaker_02_Target){
-    SwBreaker_02_Target = targetValue*1000;
+    SwBreaker_02_Target = targetValue;
     EEPROM.write(ADR_BREAKER_02_TARGET, SwBreaker_02_Target);
     EEPROM.commit();
   }
