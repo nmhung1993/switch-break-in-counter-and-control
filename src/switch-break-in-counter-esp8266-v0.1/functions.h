@@ -214,7 +214,7 @@ void syncEEPROMToLocalVar() {
     
     long targetCounter = readLongFromEEPROM(ADR_BREAKER_01_TARGET);
     if (targetCounter != SwBreaker_01_Target) {
-      SwBreaker_01_Target = targetCounter;
+      SwBreaker_01_Target = targetCounter*1000;
       writeLongIntoEEPROM(ADR_BREAKER_01_TARGET, targetCounter);
       printOutput(String("Switch Breaker 01 >> Target Counter: ") + String(ltos(readLongFromEEPROM(ADR_BREAKER_01_TARGET), buf, 10)));
     }
@@ -244,7 +244,7 @@ void syncEEPROMToLocalVar() {
     
     long targetCounter = readLongFromEEPROM(ADR_BREAKER_02_TARGET);
     if (targetCounter != SwBreaker_02_Target) {
-      SwBreaker_02_Target = targetCounter;
+      SwBreaker_02_Target = targetCounter*1000;
       writeLongIntoEEPROM(ADR_BREAKER_02_TARGET, targetCounter);
       printOutput(String("Switch Breaker 02 >> Target Counter: ") + String(ltos(readLongFromEEPROM(ADR_BREAKER_02_TARGET), buf, 10)));
     }
@@ -274,7 +274,7 @@ void syncEEPROMToLocalVar() {
     
     long targetCounter = readLongFromEEPROM(ADR_BREAKER_03_TARGET);
     if (targetCounter != SwBreaker_03_Target) {
-      SwBreaker_03_Target = targetCounter;
+      SwBreaker_03_Target = targetCounter*1000;
       writeLongIntoEEPROM(ADR_BREAKER_03_TARGET, targetCounter);
       printOutput(String("Switch Breaker 02 >> Target Counter: ") + String(ltos(readLongFromEEPROM(ADR_BREAKER_03_TARGET), buf, 10)));
     }
