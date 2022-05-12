@@ -2,8 +2,8 @@ BLYNK_WRITE(vPIN_BREAKER_01_TARGET)
 {
   int targetValue = param.asInt();
   if (targetValue!= SwBreaker_01_Target){
-    SwBreaker_01_Target = targetValue;
-    EEPROM.write(ADR_BREAKER_01_TARGET, SwBreaker_01_Target);
+    SwBreaker_01_Target = targetValue*1000;
+    EEPROM.write(ADR_BREAKER_01_TARGET, targetValue);
     EEPROM.commit();
   }
   printOutput(String("Switch Breaker 01 TARGET >> ") + String(ltos( EEPROM.read(ADR_BREAKER_01_TARGET), buf, 10)));
@@ -13,8 +13,8 @@ BLYNK_WRITE(vPIN_BREAKER_02_TARGET)
 {
   int targetValue = param.asInt();
   if (targetValue!= SwBreaker_02_Target){
-    SwBreaker_02_Target = targetValue;
-    EEPROM.write(ADR_BREAKER_02_TARGET, SwBreaker_02_Target);
+    SwBreaker_02_Target = targetValue*1000;
+    EEPROM.write(ADR_BREAKER_02_TARGET, targetValue);
     EEPROM.commit();
   }
   printOutput(String("Switch Breaker 02 TARGET >> ") + String(ltos( EEPROM.read(ADR_BREAKER_02_TARGET), buf, 10)));
